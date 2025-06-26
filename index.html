@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ángel Oyaga - Aprendiz Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 bg-white shadow fixed w-full z-10">
+    <h1 class="text-xl font-bold">Ángel Oyaga</h1>
+    <nav>
+      <ul class="flex space-x-4">
+        <li><a href="#about" class="hover:text-blue-600">Sobre mí</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Habilidades</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Proyectos</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-40 bg-gray-800 text-white">
+    <h2 class="text-4xl font-bold mb-4">¡Hola! Soy Ángel Oyaga</h2>
+    <p class="text-lg">Aprendiz de Desarrollo Web en el SENA</p>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="about" class="py-16 px-4 max-w-3xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Sobre mí</h3>
+    <p class="text-lg">Soy aprendiz de desarrollo web con formación en el SENA y cursos en Platzi. Me apasiona crear sitios web responsivos y mejorar mis habilidades técnicas cada día. Actualmente busco oportunidades para realizar mi etapa productiva como desarrollador frontend.</p>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="skills" class="py-16 bg-gray-100 px-4 max-w-4xl mx-auto">
+    <h3 class="text-3xl font-bold mb-8 text-center">Habilidades</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">HTML</div>
+      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">CSS</div>
+      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">JavaScript</div>
+      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">Tailwind CSS</div>
+      <div class="bg-white shadow hover:bg-gray-300 p-4 rounded">REACT JS</div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="projects" class="py-16 px-4 max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Proyectos</h3>
+    <p>Próximamente agregaré aquí mis proyectos destacados.</p>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="py-16 px-4 max-w-3xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Contacto</h3>
+    <form class="space-y-4">
+      <input type="text" placeholder="Tu nombre" class="w-full p-3 border rounded"/>
+      <input type="email" placeholder="Tu correo" class="w-full p-3 border rounded"/>
+      <textarea placeholder="Tu mensaje" class="w-full p-3 border rounded"></textarea>
+      <button class="bg-gray-800 text-white px-6 py-3 rounded hover:bg-gray-600">Enviar mensaje</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p> 2025 Ángel Oyaga - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
