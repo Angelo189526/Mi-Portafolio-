@@ -1,71 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ángel Oyaga - Aprendiz Web</title>
+  <title>Código Vivo - Portafolio Web</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-white text-gray-800 font-sans">
 
   <!-- Header -->
-  <header class="flex justify-between items-center p-4 bg-white shadow fixed w-full z-10">
-    <h1 class="text-xl font-bold">Ángel Oyaga</h1>
-    <nav>
-      <ul class="flex space-x-4">
-        <li><a href="#about" class="hover:text-blue-600">Sobre mí</a></li>
-        <li><a href="#skills" class="hover:text-blue-600">Habilidades</a></li>
-        <li><a href="#projects" class="hover:text-blue-600">Proyectos</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contacto</a></li>
+  <header class="bg-white shadow-md fixed w-full bg-white z-50 shadow ">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="text-xl font-bold text-gray-900">CÓDIGO VIVO</a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center gap-4">
+        <a class="hover:text-blue-600 cursor-pointer">About</a>
+        <a class="hover:text-blue-600 cursor-pointer">Integrations</a>
+        <a class="hover:text-blue-600 cursor-pointer">Features</a>
+        <a class="hover:text-blue-600 cursor-pointer">Docs</a>
+      </nav>
+      <div class="flex items-center gap-4 mt-4 md:mt-0">
+        <button class="bg-blue-500 text-white py-2 px-5 rounded hover:bg-opacity-80">Login</button>
+        <img id="mode-btn" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer">
+        <img id="menu-btn" src="./img/hamburguesa.png" alt="Menú" class="w-6 h-6 cursor-pointer">
+      </div>
+    </div>
+
+    <!-- Menú hamburguesa -->
+    <div id="burguer-menu" class="hidden fixed top-16 right-4 bg-gray-100 w-48 p-4 rounded shadow-lg z-50">
+      <ul class="flex flex-col space-y-4">
+        <li><a href="#about" class="hover:text-blue-600">Acerca De</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Ver Perfil</a></li>
       </ul>
-    </nav>
+      <div class="flex justify-between items-center hover:bg-gray-300 mt-24 p-2 rounded">
+        <a href="./verPerfil.html" class="block py-2">Configuración</a>
+        <img src="./img/ajustes.png" class="w-6 h-6 cursor-pointer" alt="Configuración">
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="text-center py-40 bg-gray-800 text-white">
-    <h2 class="text-4xl font-bold mb-4">¡Hola! Soy Ángel Oyaga</h2>
-    <p class="text-lg">Aprendiz de Desarrollo Web en el SENA</p>
-  </section>
+  <!-- FlexBox -->
+  <section class="text-black body-font">
+    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center md:gap-10">
+      
+      <!-- Columna de texto -->
+      <div class="md:w-1/2 flex flex-col md:items-start text-center md:text-left mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Invite friends and scale your business
+        </h1>
+        <p class="mb-6 opacity-70 leading-relaxed">
+          Este espacio está dedicado a compartir proyectos y avances en el área del desarrollo web, realizados por un estudiante en formación. Este portafolio refleja el proceso de aprendizaje y la pasión por crear sitios modernos, funcionales y adaptables a distintos dispositivos.
+        </p>
+        <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-opacity-80 text-sm">
+          VER MÁS
+        </button>
+      </div>
 
-  <!-- Sobre mí -->
-  <section id="about" class="py-16 px-4 max-w-3xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6">Sobre mí</h3>
-    <p class="text-lg">Soy aprendiz de desarrollo web con formación en el SENA y cursos en Platzi. Me apasiona crear sitios web responsivos y mejorar mis habilidades técnicas cada día. Actualmente busco oportunidades para realizar mi etapa productiva como desarrollador frontend.</p>
+      <!-- Columna de grilla -->
+      <div class="md:w-1/2 grid grid-cols-8 grid-rows-8 gap-2">
+        <img class="w-16 h-16 col-start-3 col-end-4 row-start-3 row-end-4 rotate-12" src="./img/html5.png" alt="">
+        <img class="w-16 h-16 col-start-4 col-end-5 row-start-4 row-end-5 -rotate-12" src="./img/css.png" alt="">
+        <img class="w-16 h-16 col-start-5 col-end-6 row-start-5 row-end-6 rotate-6" src="./img/javascript.png" alt="">
+        <img class="w-16 h-16 col-start-4 col-end-5 row-start-6 row-end-7 -rotate-6" src="./img/tailwindcss.png" alt="">
+        <img class="w-16 h-16 col-start-2 col-end-3 row-start-4 row-end-5 rotate-3" src="./img/github.png" alt="">
+        <img class="w-16 h-16 col-start-6 col-end-7 row-start-3 row-end-4 -rotate-3" src="./img/react.png" alt="">
+        <img class="w-16 h-16 col-start-5 col-end-6 row-start-2 row-end-3 rotate-12" src="./img/sass.png" alt="">
+      </div>
+
+    </div>
   </section>
 
   <!-- Habilidades -->
-  <section id="skills" class="py-16 bg-gray-100 px-4 max-w-4xl mx-auto">
+  <section id="skills" class="py-16 mt-16 bg-gray-100 px-4 max-w-4xl mx-auto">
     <h3 class="text-3xl font-bold mb-8 text-center">Habilidades</h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">HTML</div>
-      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">CSS</div>
-      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">JavaScript</div>
-      <div class="bg-white shadow hover:bg-gray-300  p-4 rounded">Tailwind CSS</div>
-      <div class="bg-white shadow hover:bg-gray-300 p-4 rounded">REACT JS</div>
+    <div id="habilidades-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <!-- Las habilidades se cargan dinámicamente -->
     </div>
   </section>
 
   <!-- Proyectos -->
-  <section id="projects" class="py-16 px-4 max-w-4xl mx-auto text-center">
+  <section id="project-list" class="py-16 px-4 max-w-4xl mx-auto text-center">
     <h3 class="text-3xl font-bold mb-6">Proyectos</h3>
-    <p>Próximamente agregaré aquí mis proyectos destacados.</p>
   </section>
 
   <!-- Contacto -->
   <section id="contact" class="py-16 px-4 max-w-3xl mx-auto text-center">
     <h3 class="text-3xl font-bold mb-6">Contacto</h3>
-    <form class="space-y-4">
-      <input type="text" placeholder="Tu nombre" class="w-full p-3 border rounded"/>
-      <input type="email" placeholder="Tu correo" class="w-full p-3 border rounded"/>
-      <textarea placeholder="Tu mensaje" class="w-full p-3 border rounded"></textarea>
+    <form id="form" class="space-y-4">
+      <input id="text" type="text" placeholder="Tu nombre" class="w-full p-3 border rounded"/>
+      <input id="email" type="email" placeholder="Tu correo" class="w-full p-3 border rounded"/>
+      <textarea id="mensaje" placeholder="Tu mensaje" class="w-full p-3 border rounded"></textarea>
       <button class="bg-gray-800 text-white px-6 py-3 rounded hover:bg-gray-600">Enviar mensaje</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-6 text-center">
-    <p> 2025 Ángel Oyaga - Todos los derechos reservados</p>
+    <p>2025 Ángel Oyaga - Todos los derechos reservados</p>
   </footer>
 
+  <script type="module" src="./index.js"></script>
 </body>
 </html>
