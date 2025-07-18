@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuración - Código Vivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 w-full z-10">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <a href="./index.html" class="text-xl font-bold text-gray-900">CÓDIGO VIVO</a>
+        <nav class="flex items-center gap-4">
+          <a href="./index.html#about" class="hover:text-blue-600">Inicio</a>
+          <a href="./verPerfil.html" class="hover:text-blue-600">Perfil</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido -->
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-4 py-12 mt-32 space-y-12">
+
+        <!-- Info -->
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 items-center">
+          <div class="px-4 sm:px-0">
+            <h3 class="font-semibold text-gray-900 text-xl">Desarrollador De Software</h3>
+            <p class="text-sm text-gray-500">Angel Oyaga</p>
+          </div>
+        </div>
+
+        <!--feed de mi perfil -->
+        <ul class="relative flex flex-col gap-12 py-12 pl-6 
+                   before:absolute before:top-0 before:left-6 before:h-full 
+                   before:border before:-translate-x-1/2 before:border-slate-200 
+                   before:border-dashed after:absolute after:top-6 after:left-6 
+                   after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200">
+
+          <!-- Item 1 -->
+          <li class="relative pl-6">
+            <div class="absolute left-0 z-10 flex items-center justify-center 
+                        w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
+            <div class="flex flex-col flex-1 gap-0">
+              <h4 class="text-sm font-medium text-slate-700">Experiencia</h4>
+              <p class="text-xs text-slate-500">Ultima Actualización</p>
+            </div>
+          </li>
+
+          <!-- Item 2 -->
+          <li class="relative pl-6">
+            <div class="absolute left-0 z-10 flex items-center justify-center 
+                        w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
+            <div class="flex flex-col flex-1 gap-0">
+              <h4 class="text-sm font-medium text-slate-700">Estudios</h4>
+              <p class="text-xs text-slate-500">Ultima Actualización</p>
+            </div>
+          </li>
+        </ul>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+      <p>2025 Ángel Oyaga - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="./configuracion.js"></script>
+  </body>
+</html>
