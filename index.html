@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,12 +7,12 @@
   <title>Código Vivo - Portafolio Web</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans dark:bg-zinc-900 dark:text-white">
 
   <!-- Header -->
-  <header class="bg-white shadow-md fixed w-full bg-white z-50 shadow ">
+  <header class="bg-white shadow-md fixed w-full bg-white z-50 shadow dark:bg-zinc-800 ">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="text-xl font-bold text-gray-900">CÓDIGO VIVO</a>
+      <a class="text-xl font-bold text-gray-900 dark:text-white">CÓDIGO VIVO</a>
       <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center gap-4">
         <a href="#skills" class="hover:text-blue-600 cursor-pointer">Habilidades</a>
         <a href="project-list" class="hover:text-blue-600 cursor-pointer">Proyectos</a>
@@ -19,8 +20,8 @@
         <a href="./ajustes.html" class="hover:text-blue-600 cursor-pointer">Anuncios</a>
       </nav>
       <div class="flex items-center gap-4 mt-4 md:mt-0">
-        <button class="bg-gray-800 text-white px-6 py-2 rounded-lg  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 ">Login</button>
-        <img id="mode-btn" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer">
+        <button class="bg-neutral-800 text-white px-6 py-2 rounded-lg  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 dark:bg-white dark:text-neutral-800">Login</button>
+        <img id="toggle-theme" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer">
         <img id="menu-btn" src="./img/hamburguesa.png" alt="Menú" class="w-6 h-6 cursor-pointer">
       </div>
     </div>
@@ -31,7 +32,7 @@
         <li><a href="#about" class="hover:text-blue-600">Acerca De</a></li>
         <li><a href="./verPerfil.html" class="hover:text-blue-600">Ver Perfil</a></li>
       </ul>
-      <div class="flex justify-between items-center mt-24 p-2 rounded-lg bg-gray-800 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-gray-600">
+      <div class="flex justify-between items-center mt-24 p-2 rounded-lg bg-neutral-800 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-gray-600">
         <a href="./ajustes.html" class="block py-2">Configuración</a>
         <img src="./img/ajustes.png" class="w-6 h-6 cursor-pointer" alt="Configuración">
       </div>
@@ -39,18 +40,18 @@
   </header>
 
   <!-- FlexBox -->
-  <section class="text-black body-font">
-    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center md:gap-10">
+  <section class="text-black body-font dark:text-white">
+    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center md:gap-10 ">
       
       <!-- Columna de texto -->
-      <div class="md:w-1/2 flex flex-col md:items-start text-center md:text-left mb-10 md:mb-0">
+      <div class="md:w-1/2 flex flex-col md:items-start text-center md:text-left mb-10 md:mb-0 ">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">
           Invite friends and scale your business
         </h1>
         <p class="mb-6 opacity-70 leading-relaxed">
           Este espacio está dedicado a compartir proyectos y avances en el área del desarrollo web, realizados por un estudiante en formación. Este portafolio refleja el proceso de aprendizaje y la pasión por crear sitios modernos, funcionales y adaptables a distintos dispositivos.
         </p>
-        <button class="bg-gray-800 text-white px-6 py-2 rounded-lg  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 ">
+        <button class="bg-neutral-800 text-white px-6 py-2 rounded-lg  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 ">
           VER MÁS
         </button>
       
@@ -71,7 +72,7 @@
   </section>
 
   <!-- Habilidades -->
-  <section id="skills" class="py-16 mt-16 bg-white rounded-lg  px-4 max-w-4xl mx-auto">
+  <section id="skills" class="py-16 mt-16 bg-white rounded-lg  px-4 max-w-4xl mx-auto dark:text-white">
     <h3 class="text-3xl font-bold mb-8 text-center">Habilidades</h3>
     <div id="habilidades-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <!-- Las habilidades se cargan dinámicamente -->
@@ -90,15 +91,18 @@
       <input id="text" type="text" placeholder="Tu nombre" class="w-full p-3 border rounded"/>
       <input id="email" type="email" placeholder="Tu correo" class="w-full p-3 border rounded"/>
       <textarea id="mensaje" placeholder="Tu mensaje" class="w-full p-3 border rounded"></textarea>
-      <button class="bg-gray-800 text-white px-6 py-3 rounded-lg  hover:bg-gray-600">Enviar mensaje</button>
+      <button class="bg-neutral-800 text-white px-6 py-3 rounded-lg  hover:bg-gray-600">Enviar mensaje</button>
     </form>
   </section>
 
+  
+
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
+  <footer class="bg-neutral-800 text-white py-6 text-center">
     <p>2025 Ángel Oyaga - Todos los derechos reservados</p>
   </footer>
 
   <script type="module" src="./index.js"></script>
+  <script src="./DarkMode.js"></script>
 </body>
 </html>
