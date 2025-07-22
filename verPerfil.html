@@ -6,15 +6,16 @@
     <title>Configuración - Código Vivo</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
+  <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen dark:bg-zinc-900 dark:text-white transition-colors duration-500">
 
     <!-- Header -->
-    <header class="bg-white shadow-md fixed top-0 w-full z-10">
+    <header class="bg-white dark:bg-zinc-800 shadow-md fixed top-0 w-full z-10">
       <div class="container mx-auto flex justify-between items-center p-4">
-        <a href="./index.html" class="text-xl font-bold text-gray-900">CÓDIGO VIVO</a>
-        <nav class="flex items-center gap-4">
-          <a href="./index.html#about" class="hover:text-blue-600">Inicio</a>
-          <a href="./verPerfil.html" class="hover:text-blue-600">Perfil</a>
+        <a href="./index.html" class="text-xl font-bold text-gray-900 dark:text-white">CÓDIGO VIVO</a>
+        <nav class="flex items-center gap-6 text-sm font-medium">
+          <a href="./index.html#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Inicio</a>
+          <a href="./ajustes.html" class="block">Configuración</a>
+          <img id="toggle-theme" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer">
         </nav>
       </div>
     </header>
@@ -24,76 +25,68 @@
       <section class="max-w-4xl mx-auto px-4 py-12 mt-32 space-y-12">
 
         <!-- Info -->
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 items-center">
-          <div class="px-4 sm:px-0">
-            <h3 class="font-semibold text-gray-900 text-xl">Desarrollador De Software</h3>
-            <p class="text-sm text-gray-500">Angel Oyaga</p>
+        <div class="px-4 py-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Desarrollador de Software</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Angel Oyaga</p>
           </div>
         </div>
 
-        <!--feed de mi perfil -->
-        <ul class="relative flex flex-col gap-12 py-12 pl-6 
+        <!-- Línea de tiempo -->
+        <ul class="relative flex flex-col gap-12 py-12 pl-6
                    before:absolute before:top-0 before:left-6 before:h-full 
-                   before:border before:-translate-x-1/2 before:border-slate-200 
-                   before:border-dashed after:absolute after:top-6 after:left-6 
-                   after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200">
+                   before:border before:border-dashed before:border-slate-300 dark:before:border-zinc-600
+                   after:absolute after:top-6 after:left-6 after:bottom-6 
+                   after:border after:-translate-x-1/2 after:border-slate-300 dark:after:border-zinc-600">
 
-          <!-- Item 1 -->
-        <li class="relative pl-6">
-          <div class="absolute left-0 z-10 flex items-center justify-center 
-                        w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-          <section id="" class="py-12 bg-white rounded-xl px-4 max-w-4xl mx-auto">
-                  <h2 class="font-semibold text-gray-900 text-xl mb-6">Educación</h2>
-                  <h4 class="text-sm font-medium text-slate-700">Ultima Actualización</h4>
-                  <p class="text-xs text-slate-500">Angel Oyaga</p>
-        </section>
-         </li>
-
-    
-          <!-- Item 2 -->
-        <li class="relative pl-6">
-           <div class="absolute left-0 z-10 flex items-center justify-center 
-                        w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-           
-              <section id="" class="py-12 bg-white rounded-xl px-4 max-w-4xl mx-auto">
-                  <h2 class="font-semibold text-gray-900 text-xl mb-6">Certificaciones</h2>
-                  <h4 class="text-sm font-medium text-slate-700">Ultima Actualización</h4>
-                  <p class="text-xs text-slate-500">Angel Oyaga</p>
-              </section>
-           </li>
-
-            <!-- Item 3 -->
+          <!-- Item genérico -->
+          <!-- Repite este bloque para cada sección -->
           <li class="relative pl-6">
-            <div class="absolute left-0 z-10 flex items-center justify-center 
-                        w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-           
-              <section id="" class="py-12 bg-white rounded-xl px-4 max-w-4xl mx-auto">
-                  <h2 class="font-semibold text-gray-900 text-xl mb-6">Conocimientos</h2>
-                  <h4 class="text-sm font-medium text-slate-700">Ultima Actualización</h4>
-                  <p class="text-xs text-slate-500">Angel Oyaga</p>
-              </section>
-           </li>
+            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
+            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Educación</h2>
+              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
+            </section>
+          </li>
 
-            <!-- Item 4 -->
           <li class="relative pl-6">
-            <div class="absolute left-0 z-10 flex items-center justify-center 
-                        w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-           
-              <section id="" class="py-12 bg-white rounded-xl px-4 max-w-4xl mx-auto">
-                  <h2 class="font-semibold text-gray-900 text-xl mb-6">Experiencia</h2>
-                  <h4 class="text-sm font-medium text-slate-700">Ultima Actualización</h4>
-                  <p class="text-xs text-slate-500">Angel Oyaga</p>
-              </section>
-            </li>
-          </ul>
-        </section>
+            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
+            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Certificaciones</h2>
+              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
+            </section>
+          </li>
+
+          <li class="relative pl-6">
+            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
+            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Conocimientos</h2>
+              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
+            </section>
+          </li>
+
+          <li class="relative pl-6">
+            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
+            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Experiencia</h2>
+              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
+            </section>
+          </li>
+
+        </ul>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 text-center">
+    <footer class="bg-gray-800 dark:bg-zinc-900 text-white py-6 text-center">
       <p>2025 Ángel Oyaga - Todos los derechos reservados</p>
     </footer>
 
     <script src="./configuracion.js"></script>
+    <script src="./DarkMode.js"></script>
   </body>
 </html>
