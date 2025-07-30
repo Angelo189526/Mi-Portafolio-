@@ -9,3 +9,34 @@ if (menuBtn && hamburguerBtn) {
 }
 
 
+// Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// Configuración Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCosIr32zEdNLcQXpvc7wpRB-FcI2oAb94",
+  authDomain: "portafolioangel-34a19.firebaseapp.com",
+  projectId: "portafolioangel-34a19",
+  storageBucket: "portafolioangel-34a19.appspot.com",
+  messagingSenderId: "29589044797",
+  appId: "1:29589044797:web:d57bc2b84122dd8c4ff454"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Mostrar habilidades en el contenedor
+async function cargarHabilidades() {
+  const contenedor = document.getElementById("habilidades-container");
+  const snapshot = await getDocs(collection(db, "ComponentHabilidad"));
+
+  snapshot.forEach((doc) => {
+    const { title } = doc.data(); 
+    const p = document.createElement("p");
+    p.textContent = title;
+    contenedor.appendChild(p);
+  });
+}
+
+cargarHabilidades();
