@@ -39,4 +39,27 @@ async function cargarHabilidades() {
   });
 }
 
+const section = document.getElementById("project-list");
+
+async function cargarProyectos() {
+  const querySnapshot = await getDocs(collection(db, "Proyectos"));
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    console.log(data); 
+
+    const div = document.createElement("div");
+    div.className = "bg-white shadow p-4 rounded mb-4 dark:bg-zinc-900 ";
+
+    div.innerHTML = `
+      <h4 class="text-xl font-bold mb-2 ">${data.title}</h4>
+      <p class="mb-2">${data.description || "Sin descripción"}</p>
+      <a href="${data.url}" target="_blank" class="text-blue-600 hover:underline">Ver proyecto</a>
+    `;
+
+    section.appendChild(div);
+  });
+}
+
+cargarProyectos();
+
 cargarHabilidades();
