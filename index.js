@@ -32,11 +32,19 @@ async function cargarHabilidades() {
   const snapshot = await getDocs(collection(db, "ComponentHabilidad"));
 
   snapshot.forEach((doc) => {
-    const { title } = doc.data(); 
-    const p = document.createElement("p");
-    p.textContent = title;
-    contenedor.appendChild(p);
-  });
+  const { title } = doc.data(); 
+
+  const card = document.createElement("div");
+  card.className = "bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform";
+
+  card.innerHTML = `
+    <h4 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">${title}</h4>
+    <p class="text-sm text-zinc-600 dark:text-zinc-300">Nivel: en progreso 🚀</p>
+  `;
+
+  contenedor.appendChild(card);
+});
+
 }
 
 const section = document.getElementById("project-list");
