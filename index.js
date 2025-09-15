@@ -33,13 +33,21 @@ async function cargarHabilidades() {
 
   snapshot.forEach((doc) => {
   const { title } = doc.data(); 
+  const { number } = doc.data();
+  const { ProcesoDeAprendizaje } = doc.data();
+
+  
+
+
 
   const card = document.createElement("div");
   card.className = "bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform";
 
   card.innerHTML = `
     <h4 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">${title}</h4>
-    <p class="text-sm text-zinc-600 dark:text-zinc-300">Nivel: en progreso 🚀</p>
+    <p class="text-sm text-zinc-600 dark:text-zinc-300">Aprendizaje: ${ProcesoDeAprendizaje} 🚀</p>
+    <br>
+    <p class="text-sm text-zinc-600 dark:text-zinc-300">Nivel: ${number}</p>
   `;
 
   contenedor.appendChild(card);
@@ -47,6 +55,7 @@ async function cargarHabilidades() {
 
 }
 
+//Importa la sección de proyectos
 const section = document.getElementById("project-list");
 
 async function cargarProyectos() {
@@ -54,7 +63,7 @@ async function cargarProyectos() {
   querySnapshot.forEach((doc) => {
     const data = doc.data();
     console.log(data); 
-
+//Crea la clase y sus estilos 
     const div = document.createElement("div");
     div.className = "bg-white shadow p-4 rounded mb-4 dark:bg-zinc-900 ";
 
