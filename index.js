@@ -32,14 +32,19 @@ async function cargarHabilidades() {
   const snapshot = await getDocs(collection(db, "ComponentHabilidad"));
 
   snapshot.forEach((doc) => {
-  const { title } = doc.data(); 
-  const { number } = doc.data();
-  const { ProcesoDeAprendizaje } = doc.data();
+  const { title, number, ProcesoDeAprendizaje } = doc.data(); 
 
-  
+  let colorClass = "text-zinc-600";
 
+if (number <= 40) {
+  colorClass = "text-red-500";
+} else if (number <= 70) {
+  colorClass = "text-yellow-400";
+} else {
+  colorClass = "text-green-500";
+}
 
-
+//Crea la clase y sus estilos
   const card = document.createElement("div");
   card.className = "bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform";
 
@@ -47,7 +52,8 @@ async function cargarHabilidades() {
     <h4 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">${title}</h4>
     <p class="text-sm text-zinc-600 dark:text-zinc-300">Aprendizaje: ${ProcesoDeAprendizaje} 🚀</p>
     <br>
-    <p class="text-sm text-zinc-600 dark:text-zinc-300">Nivel: ${number}</p>
+    <p class="text-sm ${colorClass}">Nivel: ${number}%</p>
+
   `;
 
   contenedor.appendChild(card);
