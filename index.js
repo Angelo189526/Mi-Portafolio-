@@ -68,7 +68,6 @@ async function cargarProyectos() {
   const querySnapshot = await getDocs(collection(db, "Proyectos"));
   querySnapshot.forEach((doc) => {
     const data = doc.data();
-    console.log(data); 
 //Crea la clase y sus estilos 
     const div = document.createElement("div");
     div.className = "bg-white shadow p-4 rounded mb-4 dark:bg-zinc-900 ";
@@ -83,6 +82,30 @@ async function cargarProyectos() {
   });
 }
 
+const cardImg = document.getElementById("card-img"); 
+
+async function cargarImg() {
+  const querySnapshot = await getDocs(collection(db, "imgCard"));
+  querySnapshot.forEach((doc) => {
+    const { title, url } = doc.data();
+
+    const card = document.createElement("div");
+    card.className = "bg-white text-zinc-600 rounded-xl  p-4 flex flex-col items-center justify-center  dark:bg-gray-900";
+
+    card.innerHTML = `
+      <img src="${url}" alt="${title}" class="w-16 h-16 object-contain mx-auto" />
+      <h4 class="mt-2 text-sm font-semibold dark:text-white">${title}</h4>
+    `;
+
+    cardImg.appendChild(card);
+  }
+
+  );
+}
+
+cargarImg();
+
 cargarProyectos();
 
 cargarHabilidades();
+
