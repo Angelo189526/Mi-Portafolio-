@@ -1,102 +1,131 @@
-// Menú 
-const menuBtn = document.getElementById('menu-btn');
-const hamburguerBtn = document.getElementById('burguer-menu');
 
-if (menuBtn && hamburguerBtn) {
-  menuBtn.addEventListener("click", () => {
-    hamburguerBtn.classList.toggle("hidden");
-  });
-}
-
-// Firebase
-import { firebaseConfig } from "./config.js";
+// -------------------------
+// Firebase Config & Setup
+// -------------------------
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCosIr32zEdNLcQXpvc7wpRB-FcI2oAb94",
+  authDomain: "portafolioangel-34a19.firebaseapp.com",
+  projectId: "portafolioangel-34a19",
+  storageBucket: "portafolioangel-34a19.firebasestorage.app",
+  messagingSenderId: "29589044797",
+  appId: "1:29589044797:web:d57bc2b84122dd8c4ff454"
+};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Mostrar habilidades en el contenedor
+/**
+ * Crea y devuelve un elemento HTML con clases y contenido
+ */
+function createElement(tag, className, innerHTML = "") {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (innerHTML) el.innerHTML = innerHTML;
+  return el;
+}
+// -------------------------
+// Habilidades
+// -------------------------
 async function cargarHabilidades() {
   const contenedor = document.getElementById("habilidades-container");
-  const snapshot = await getDocs(collection(db, "ComponentHabilidad"));
+  if (!contenedor) return;
 
-  snapshot.forEach((doc) => {
-  const { title, number, ProcesoDeAprendizaje } = doc.data(); 
+  try {
+    const snapshot = await getDocs(collection(db, "ComponentHabilidad"));
+    snapshot.forEach((doc) => {
+      const { title, number, ProcesoDeAprendizaje } = doc.data();
 
-  let colorClass = "text-zinc-600";
+      const colorClass =
+        number <= 40 ? "text-red-500" :
+        number <= 70 ? "text-yellow-400" :
+        "text-green-500";
 
-if (number <= 40) {
-  colorClass = "text-red-500";
-} else if (number <= 70) {
-  colorClass = "text-yellow-400";
-} else {
-  colorClass = "text-green-500";
-}
+      const card = createElement(
+        "div",
+        "bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform",
+        `
+          <h4 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">${title}</h4>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            Aprendizaje: ${ProcesoDeAprendizaje} 🚀
+          </p>
+          <br>
+          <p class="text-sm ${colorClass}">Nivel: ${number}%</p>
+        `
+      );
 
-//Crea la clase y sus estilos
-  const card = document.createElement("div");
-  card.className = "bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform";
-
-  card.innerHTML = `
-    <h4 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">${title}</h4>
-    <p class="text-sm text-zinc-600 dark:text-zinc-300">Aprendizaje: ${ProcesoDeAprendizaje} 🚀</p>
-    <br>
-    <p class="text-sm ${colorClass}">Nivel: ${number}%</p>
-
-  `;
-
-  contenedor.appendChild(card);
-});
-
-}
-
-//Importa la sección de proyectos
-const section = document.getElementById("project-list");
-
-async function cargarProyectos() {
-  const querySnapshot = await getDocs(collection(db, "Proyectos"));
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-//Crea la clase y sus estilos 
-    const div = document.createElement("div");
-    div.className = "bg-white shadow p-4 rounded mb-4 dark:bg-zinc-900 ";
-
-    div.innerHTML = `
-      <h4 class="text-xl font-bold mb-2 ">${data.title}</h4>
-      <p class="mb-2">${data.description || "Sin descripción"}</p>
-      <a href="${data.url}" target="_blank" class="text-blue-600 hover:underline">Ver proyecto</a>
-    `;
-
-    section.appendChild(div);
-  });
-}
-
-const cardImg = document.getElementById("card-img"); 
-
-async function cargarImg() {
-  const querySnapshot = await getDocs(collection(db, "imgCard"));
-  querySnapshot.forEach((doc) => {
-    const { title, url } = doc.data();
-
-    const card = document.createElement("div");
-    card.className = "bg-white text-zinc-600 rounded-xl  p-4 flex flex-col items-center justify-center  dark:bg-gray-900";
-
-    card.innerHTML = `
-      <img src="${url}" alt="${title}" class="w-16 h-16 object-contain mx-auto" />
-      <h4 class="mt-2 text-sm font-semibold dark:text-white">${title}</h4>
-    `;
-
-    cardImg.appendChild(card);
+      contenedor.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error cargando habilidades:", error);
   }
-
-  );
 }
+// -------------------------
+// Proyectos
+// -------------------------
+async function cargarProyectos() {
+  const section = document.getElementById("project-list");
+  if (!section) return;
 
-cargarImg();
+  try {
+    const snapshot = await getDocs(collection(db, "Proyectos"));
+    snapshot.forEach((doc) => {
+      const { title, description, url } = doc.data();
 
-cargarProyectos();
+      const div = createElement(
+        "div",
+        "bg-white shadow p-4 rounded mb-4 dark:bg-zinc-900",
+        `
+          <h4 class="text-xl font-bold mb-2">${title}</h4>
+          <p class="mb-2">${description || "Sin descripción"}</p>
+          <a href="${url}" target="_blank" rel="noopener noreferrer"
+             class="text-blue-600 hover:underline">
+            Ver proyecto
+          </a>
+        `
+      );
 
-cargarHabilidades();
+      section.appendChild(div);
+    });
+  } catch (error) {
+    console.error("Error cargando proyectos:", error);
+  }
+}
+// -------------------------
+// Imágenes
+// -------------------------
+async function cargarImg() {
+  const cardImg = document.getElementById("card-img");
+  if (!cardImg) return;
 
+  try {
+    const snapshot = await getDocs(collection(db, "imgCard"));
+    snapshot.forEach((doc) => {
+      const { title, url } = doc.data();
+
+      const card = createElement(
+        "div",
+        "bg-white text-zinc-600 rounded-xl p-4 flex flex-col items-center justify-center dark:bg-gray-900",
+        `
+          <img src="${url}" alt="${title}" loading="lazy"
+               class="w-16 h-16 object-contain mx-auto" />
+          <h4 class="mt-2 text-sm font-semibold dark:text-white">${title}</h4>
+        `
+      );
+
+      cardImg.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error cargando imágenes:", error);
+  }
+}
+// -------------------------
+// Inicialización
+// -------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  cargarImg();
+  cargarProyectos();
+  cargarHabilidades();
+});
