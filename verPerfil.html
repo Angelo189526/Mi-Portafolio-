@@ -6,12 +6,12 @@
     <title>Configuración - Código Vivo</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen dark:bg-zinc-900 dark:text-white ">
+  <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen dark:bg-zinc-900 dark:text-white">
 
     <!-- Header -->
-    <header class="bg-white dark:bg-zinc-800 shadow-md fixed top-0 w-full z-50">
+    <header class="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md shadow-md fixed top-0 w-full z-50">
       <div class="container mx-auto flex justify-between items-center p-4">
-        <a href="./index.html" class="text-xl font-bold text-gray-900 dark:text-white">CÓDIGO VIVO</a>
+        <a href="./index.html" class="text-xl font-bold tracking-wide text-gray-900 dark:text-white">CÓDIGO VIVO</a>
         <nav class="flex items-center gap-6 text-sm font-medium">
           <a href="./index.html#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Inicio</a>
           <a href="./ajustes.html" class="block">Configuración</a>
@@ -22,71 +22,66 @@
 
     <!-- Contenido -->
     <main class="flex-grow">
-      <section class="max-w-4xl mx-auto px-4 py-12 mt-32 space-y-12">
-
+  <section class="pt-20 py-12 px-4 bg-gray-50 dark:bg-neutral-950 min-h-screen">
+    <!-- Perfil -->
+    <div class="max-w-3xl mx-auto mb-12">
+      <div class="rounded-2xl p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 text-white shadow-xl flex flex-col md:flex-row items-center gap-6">
+        <!-- Foto -->
+        <div class="w-24 h-24 rounded-full border-4 border-white shadow-lg bg-neutral-200 dark:bg-neutral-800"></div>
         <!-- Info -->
-        <div class="px-4 py-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
-          <div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Desarrollador de Software</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Angel Oyaga</p>
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl font-bold">Ángel Oyaga</h2>
+          <p class="text-sm opacity-90">Desarrollador de Software</p>
+          <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2">
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">JavaScript</span>
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">React</span>
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Node.js</span>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Línea de tiempo -->
-        <ul class="relative flex flex-col gap-12 py-12 pl-6
-                   before:absolute before:top-0 before:left-6 before:h-full 
-                   before:border before:border-dashed before:border-slate-300 dark:before:border-zinc-600
-                   after:absolute after:top-6 after:left-6 after:bottom-6 
-                   after:border after:-translate-x-1/2 after:border-slate-300 dark:after:border-zinc-600">
+    <!-- Timeline -->
+    <div class="relative max-w-3xl mx-auto space-y-8">
+      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 to-blue-500"></div>
+      
+      <!-- Item -->
+      <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
+        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white shadow-md">🎓</div>
+        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
+          <h3 class="font-semibold">Educación</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Ingeniería de Software - Universidad XYZ (2019-2024)</p>
+        </div>
+      </div>
 
-          <!-- Item genérico -->
-          <!-- Repite este bloque para cada sección -->
-          <li class="relative pl-6">
-            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Educación</h2>
-              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
-            </section>
-          </li>
+       <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
+        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white shadow-md">🎓</div>
+        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
+          <h3 class="font-semibold">Experiencia</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Ingeniería de Software - Universidad XYZ (2019-2024)</p>
+        </div>
+      </div>
+      
+      <!-- Otro item -->
+      <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
+        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white shadow-md">📜</div>
+        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
+          <h3 class="font-semibold">Certificaciones</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Certificado en Desarrollo Web - Platzi (2023)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-          <li class="relative pl-6">
-            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Certificaciones</h2>
-              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
-            </section>
-          </li>
-
-          <li class="relative pl-6">
-            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Conocimientos</h2>
-              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
-            </section>
-          </li>
-
-          <li class="relative pl-6">
-            <div class="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -translate-x-1/2 rounded-full bg-blue-500"></div>
-            <section class="py-8 px-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Experiencia</h2>
-              <h4 class="text-sm font-medium text-gray-600 dark:text-gray-400">Última Actualización</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Angel Oyaga</p>
-            </section>
-          </li>
-
-        </ul>
-      </section>
-    </main>
 
     <!-- Footer -->
-  <footer class="bg-neutral-800 text-white py-6 text-center text-sm">
-    <p>&copy; 2025 Ángel Oyaga - Todos los derechos reservados</p>
-  </footer>
+    <footer class="bg-neutral-900 dark:bg-black text-white py-6 text-center text-sm">
+      <p>&copy; 2025 Ángel Oyaga - Todos los derechos reservados</p>
+    </footer>
 
-
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/42e3c9c5ef.js" crossorigin="anonymous"></script>
     <script src="./configuracion.js"></script>
     <script src="./DarkMode.js"></script>
   </body>

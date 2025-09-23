@@ -9,40 +9,39 @@
 </head>
 <body class="bg-gray-100 text-gray-800 dark:bg-zinc-900 dark:text-white">
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-zinc-800 z-50 shadow-lg">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
-      <a class="text-2xl font-bold text-gray-900 dark:text-white tracking-wide" href="index.html">CÓDIGO VIVO</a>
+ <!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md shadow-md">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+    <a class="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">CÓDIGO VIVO</a>
 
-      <nav class="flex flex-wrap items-center text-base justify-center gap-6 mt-4 md:mt-0">
-        <a href="#skills" class="hover:text-blue-600 transition">Habilidades</a>
-        <a href="#project-list" class="hover:text-blue-600 transition">Proyectos</a>
-        <a href="contact" class="hover:text-blue-600 transition">Contacto</a>
-        <a href="./index.html" class="hover:text-blue-600 transition">Inicio</a>
-      </nav>
+    <nav class="flex flex-wrap items-center text-base justify-center gap-6 mt-4 md:mt-0">
+      <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Habilidades</a>
+      <a href="#project-list" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a>
+      <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contacto</a>
+      <a href="./Anuncios.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Anuncios</a>
+    </nav>
 
-      <div class="flex items-center gap-4 mt-4 md:mt-0">
-        <button class="bg-neutral-800 text-white px-5 py-2 rounded-md hover:bg-gray-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-gray-200 transition">
-          Login
-        </button>
-        <img id="toggle-theme" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer dark:invert dark:brightness-500">
-        <img id="menu-btn" src="./img/hamburguesa.png" alt="Menú" class="w-6 h-6 cursor-pointer dark:invert dark:brightness-500">
-      </div>
+    <div class="flex items-center gap-4 mt-4 md:mt-0">
+      <button class="bg-neutral-800 text-white px-5 py-2 rounded-md hover:bg-gray-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-gray-200 transition">
+        Login
+      </button>
+      <img id="toggle-theme" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer dark:invert dark:brightness-500">
+      <img id="menu-btn" src="./img/hamburguesa.png" alt="Menú" class="w-6 h-6 cursor-pointer dark:invert dark:brightness-500">
     </div>
+  </div>
 
-    <!-- Menú hamburguesa -->
-    <div id="burguer-menu" class="hidden fixed top-20 right-4 bg-white dark:bg-zinc-800 w-52 p-4 rounded-lg shadow-lg z-50">
-      <ul class="flex flex-col space-y-4 text-sm">
-        <li><a href="#about" class="hover:text-blue-600">Acerca De</a></li>
-        <li><a href="./verPerfil.html" class="hover:text-blue-600">Ver Perfil</a></li>
-      </ul>
-      <div class="flex justify-between items-center mt-10 p-3 rounded-md text-black dark:bg-white dark:text-neutral-900 hover:bg-gray-700 dark:hover:bg-gray-200 transition">
-        <a href="./ajustes.html" class="block">Configuración</a>
-        <img src="./img/ajustes.png" class="w-6 h-6 " alt="Configuración">
-      </div>
+  <!-- Menú hamburguesa -->
+  <div id="burguer-menu" class="hidden fixed top-20 right-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md w-52 p-4 rounded-lg shadow-lg z-50">
+    <ul class="flex flex-col space-y-4 text-sm">
+      <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">Acerca De</a></li>
+      <li><a href="./verPerfil.html" class="hover:text-blue-600 dark:hover:text-blue-400">Ver Perfil</a></li>
+    </ul>
+    <div class="flex justify-between items-center mt-10 p-3 rounded-md bg-gray-100 text-black dark:bg-white dark:text-neutral-900 hover:bg-gray-200 transition">
+      <a href="./ajustes.html" class="block">Configuración</a>
+      <img src="./img/ajustes.png" class="w-6 h-6" alt="Configuración">
     </div>
-  </header>
-
+  </div>
+</header>
 <section id="anuncios" class="mt-32 py-16 px-4 max-w-5xl mx-auto bg-white dark:bg-zinc-800 rounded-lg shadow-md mb-20">
   <h3 class="mt-16 text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">Anuncios</h3>
 
