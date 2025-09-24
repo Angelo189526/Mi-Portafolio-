@@ -10,22 +10,28 @@
 <body class="bg-gray-100 text-gray-800 dark:bg-neutral-950 dark:text-white font-['Inter'] flex flex-col min-h-screen">
 
   <!-- Header -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="./index.html" class="text-xl font-bold text-gray-900 dark:text-white tracking-wide">CÓDIGO VIVO</a>
-      <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="./index.html" class="relative group">Inicio
-          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
-        </a>
-        <a href="./verPerfil.html" class="relative group">Perfil
-          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
-        </a>
-        <a href="./Anuncios.html" class="relative group">Anuncios
-          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
-        </a>
-      </nav>
-    </div>
-  </header>
+
+    <header class="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md shadow-md fixed top-0 w-full z-50">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+   <a class="text-2xl font-bold text-blue-700 dark:text-white tracking-wide">CÓDIGO VIVO</a>
+
+    <nav class="flex flex-wrap items-center text-base justify-center gap-6 mt-4 md:mt-0">
+      <a href="./index.html" class="relative group">Inicio
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+      </a>
+         <a href="./verPerfil.html" class="relative group">Ver Perfil
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+      </a>
+         <a href="./verPerfil.html" class="relative group">Anuncios
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+     </a>
+  
+    </nav>
+
+
+</header>
+
+  
 
   <!-- Contenido -->
   <main class="flex-grow">
