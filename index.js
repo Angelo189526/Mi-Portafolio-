@@ -45,7 +45,7 @@ async function cargarHabilidades() {
 
       const card = createElement(
         "div",
-        "bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform",
+        "bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full",
         `
           <h4 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">${title}</h4>
           <p class="text-sm text-zinc-600 dark:text-zinc-300">
@@ -76,12 +76,12 @@ async function cargarProyectos() {
 
       const div = createElement(
         "div",
-        "bg-white shadow p-4 rounded mb-4 dark:bg-zinc-900",
+        "bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md ",
         `
           <h4 class="text-xl font-bold mb-2">${title}</h4>
           <p class="mb-2">${description || "Sin descripción"}</p>
           <a href="${url}" target="_blank" rel="noopener noreferrer"
-             class="text-blue-600 hover:underline">
+             class="text-indigo-700 hover:underline">
             Ver proyecto
           </a>
         `
@@ -107,7 +107,7 @@ async function cargarImg() {
 
       const card = createElement(
         "div",
-        "bg-white text-zinc-600 rounded-xl p-4 flex flex-col items-center justify-center dark:bg-gray-900",
+        "bg-white text-zinc-600 rounded-xl p-4 flex flex-col items-center justify-center dark:bg-neutral-900",
         `
           <img src="${url}" alt="${title}" loading="lazy"
                class="w-16 h-16 object-contain mx-auto" />
@@ -138,14 +138,14 @@ async function cargarAnuncios() {
       const anuncio = createElement(
         "div",
         // Anuncio principal ocupa la mitad de la grilla horizontal y varias filas
-        "col-span-2 md:col-span-2 row-span-2 bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
+        "col-span-2 md:col-span-2 row-span-2 bg-white dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
         `
         <h4 class="text-xl font-bold mb-2">📣 ${title}</h4> 
         <img src="${url}" alt="${title}" loading="lazy" 
      class="mt-4 float-right w-full h-60 object-cover ml-4 mb-4" />
 
         <p class="mt-12 text-sm text-gray-500">Fecha:${Description}</p>
-        <p class="mt-4 text-gray-700 dark:text-gray-300">${date}</p>
+        <p class="mt-4 text-indigo-700 dark:text-indigo-400">${date}</p>
 
         `
       );
@@ -172,9 +172,9 @@ async function cargarIdeas() {
       const idea = createElement(
         "div",
         // Ideas ocupan la otra mitad de la grilla
-        "col-span-2 md:col-span-1 row-span-1 bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-4 text-left hover:scale-105 transition-transform",
+        "col-span-2 md:col-span-1 row-span-1 bg-white dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
         `
-        <h4 class="text-lg font-bold mb-1"> 💡${title}</h4> 
+        <h4 class="text-lg font-bold mb-1 text-indigo-700 dark:text-indigo-400"> 💡${title}</h4> 
         <p class="text-sm text-gray-500">${Description}</p>
         `
       );
@@ -200,9 +200,9 @@ async function cargarIdeaSecundaria() {
 
       const idea = createElement(
         "div",
-        "col-span-2 md:col-span-1 row-span-1 bg-white dark:bg-zinc-700 rounded-xl shadow-lg p-4 text-left hover:scale-105 transition-transform",
+        "col-span-2 md:col-span-1 row-span-1 bg-white dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
         `
-        <h4 class="text-lg font-bold mb-1">💡${title}</h4> 
+        <h4 class="text-lg font-bold mb-1 text-indigo-700 dark:text-indigo-400">💡${title}</h4> 
         <p class="text-sm text-gray-500">${Desciption}</p>
         `
       );

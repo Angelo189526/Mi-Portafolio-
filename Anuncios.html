@@ -7,22 +7,30 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800 dark:bg-zinc-900 dark:text-white">
+<body class="bg-gray-100 text-gray-800 dark:bg-neutral-950 dark:text-white font-['Inter']">
 
  <!-- Header -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md shadow-md">
+<header class="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md shadow-md fixed top-0 w-full z-50">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
-    <a class="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">CÓDIGO VIVO</a>
+   <a class="text-2xl font-bold text-blue-700 dark:text-white tracking-wide">CÓDIGO VIVO</a>
 
     <nav class="flex flex-wrap items-center text-base justify-center gap-6 mt-4 md:mt-0">
-      <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Habilidades</a>
-      <a href="#project-list" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a>
-      <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contacto</a>
-      <a href="./Anuncios.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Anuncios</a>
+      <a href="#skills" class="relative group">Habilidades
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#project-list" class="relative group">Proyectos
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#contact" class="relative group">Contacto
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="./Anuncios.html" class="relative group">Anuncios
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
+      </a>
     </nav>
 
     <div class="flex items-center gap-4 mt-4 md:mt-0">
-      <button class="bg-neutral-800 text-white px-5 py-2 rounded-md hover:bg-gray-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-gray-200 transition">
+ <button class="bg-indigo-700 text-white px-5 py-2 rounded-md shadow-md hover:bg-indigo-500  transition">
         Login
       </button>
       <img id="toggle-theme" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer dark:invert dark:brightness-500">
@@ -31,7 +39,7 @@
   </div>
 
   <!-- Menú hamburguesa -->
-  <div id="burguer-menu" class="hidden fixed top-20 right-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md w-52 p-4 rounded-lg shadow-lg z-50">
+  <div id="burguer-menu" class="hidden fixed top-20 right-4 bg-white/90 dark:bg-zinc-800/95 backdrop-blur-md w-52 p-4 rounded-lg shadow-lg z-50">
     <ul class="flex flex-col space-y-4 text-sm">
       <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">Acerca De</a></li>
       <li><a href="./verPerfil.html" class="hover:text-blue-600 dark:hover:text-blue-400">Ver Perfil</a></li>
@@ -42,8 +50,16 @@
     </div>
   </div>
 </header>
-<section id="anuncios" class="mt-32 py-16 px-4 max-w-5xl mx-auto bg-white dark:bg-zinc-800 rounded-lg shadow-md mb-20">
-  <h3 class="mt-16 text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">Anuncios</h3>
+
+<!-- Sección Anuncios -->
+
+<section id="anuncios" class="py-16 px-4 max-w-6xl mx-auto bg-white dark:bg-neutral-950 rounded-xl shadow-md mb-20">
+   <section class="mt-52 pb-20 max-w-4xl mx-auto text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4 dark:text-indigo-400">ANUNCIOS</h1>
+  <p class="text-lg text-zinc-600 dark:text-zinc-300">
+    Espacio dedicado a compartir novedades, recordatorios y actualizaciones del proyecto.  
+  </p>
+</section>
 
   <!-- Contenedor de anuncios dinámicos -->
   <div id="anuncios-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16">
@@ -51,42 +67,43 @@
   </div>
 
   <!-- Bloques de habilidades -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  <div id="skills" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     <!-- Bloque 1 -->
-    <div class="flex flex-col items-center p-6 bg-white dark:bg-zinc-700 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <div class="text-yellow-400 mb-4 text-4xl">💻</div>
-      <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Frontend</h4>
+    <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform">
+      <div class="text-amber-400 mb-4 text-4xl">💻</div>
+      <h4 class="text-lg font-bold mb-2 text-center">Frontend</h4>
       <p class="text-sm text-gray-600 dark:text-gray-300 text-center">React, HTML, CSS, Tailwind</p>
     </div>
 
     <!-- Bloque 2 -->
-    <div class="flex flex-col items-center p-6 bg-white dark:bg-zinc-700 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <div class="text-yellow-400 mb-4 text-4xl">🖥️</div>
-      <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Backend</h4>
+    <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform">
+      <div class="text-amber-400 mb-4 text-4xl">🖥️</div>
+      <h4 class="text-lg font-bold mb-2 text-center">Backend</h4>
       <p class="text-sm text-gray-600 dark:text-gray-300 text-center">Node.js, Express, MySql</p>
     </div>
 
     <!-- Bloque 3 -->
-    <div class="flex flex-col items-center p-6 bg-white dark:bg-zinc-700 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <div class="text-yellow-400 mb-4 text-4xl">🎨</div>
-      <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Diseño UI/UX</h4>
+    <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform">
+      <div class="text-amber-400 mb-4 text-4xl">🎨</div>
+      <h4 class="text-lg font-bold mb-2 text-center">Diseño UI/UX</h4>
       <p class="text-sm text-gray-600 dark:text-gray-300 text-center">Figma, Prototipos, Animaciones</p>
     </div>
 
     <!-- Bloque 4 -->
-    <div class="flex flex-col items-center p-6 bg-white dark:bg-zinc-700 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <div class="text-yellow-400 mb-4 text-4xl">⚡</div>
-      <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Performance</h4>
+    <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform">
+      <div class="text-amber-400 mb-4 text-4xl">⚡</div>
+      <h4 class="text-lg font-bold mb-2 text-center">Performance</h4>
       <p class="text-sm text-gray-600 dark:text-gray-300 text-center">Optimización, Lazy Loading</p>
     </div>
   </div>
 </section>
 
-  <footer class="bg-neutral-800 text-white py-6 text-center text-sm">
-    <p>&copy; 2025 Ángel Oyaga - Todos los derechos reservados</p>
-  </footer>
+<!-- Footer -->
+<footer class="bg-neutral-950 text-indigo-500 py-6 text-center text-sm">
+  <p>&copy; 2025 Ángel Oyaga - Todos los derechos reservados</p>
+</footer>
 
- 
+<!-- Scripts -->
 <script type="module" src="index.js"></script>
 <script src="./DarkMode.js"></script>
 <script src="functionsClick.js"></script>
