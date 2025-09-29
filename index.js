@@ -215,6 +215,40 @@ async function cargarIdeaSecundaria() {
 }
 
 // -------------------------
+// PERFIL (Timeline)
+// -------------------------
+async function cargarPerfil() {
+const contenedor = document.getElementById("timeline");
+if (!contenedor) return;
+
+try {
+const snapshot = await getDocs(collection(db, "VerPerfil"));
+snapshot.forEach((doc) => {
+const { icon, title, Description } = doc.data();
+
+  const item = createElement(
+    "div",
+    "relative flex flex-col md:flex-row items-center md:items-start gap-4",
+    `
+      <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white shadow-md">
+        ${icon}
+      </div>
+      <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
+        <h3 class="font-semibold">${title}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          ${Description || "Sin descripción"}
+        </p>
+      </div>
+    `
+  );
+  contenedor.appendChild(item);   
+});
+} catch (error) {
+console.error("Error cargando perfil:", error);
+}
+}
+
+// -------------------------
 // Inicialización
 // -------------------------
 document.addEventListener("DOMContentLoaded", () => {
@@ -224,4 +258,5 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarAnuncios();
   cargarIdeas();
   cargarIdeaSecundaria();
+cargarPerfil();
 });

@@ -21,7 +21,7 @@
          <a href="./ajustes.html" class="relative group">Ajustes
         <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
       </a>
-         <a href="./verPerfil.html" class="relative group">Anuncios
+         <a href="./Anuncios.html" class="relative group">Anuncios
         <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-indigo-700 transition-all group-hover:w-full"></span>
      </a>
       <img id="toggle-theme" src="./img/luna.png" alt="Modo oscuro" class="w-6 h-6 cursor-pointer dark:invert dark:brightness-500">
@@ -54,45 +54,12 @@
     </div>
 
     <!-- Timeline -->
-    <div class="relative max-w-3xl mx-auto space-y-8">
-      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 to-blue-500"></div>
-      
-      <!-- Item -->
-      <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
-        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white shadow-md">🎓</div>
-        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
-          <h3 class="font-semibold">Educación</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Tecnólogo en ańaisis y desarrollo de Software - instituto SENA (2024-2025)</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Desarrollo Web - Platzi (2023-2025)</p>
-        </div>
-      </div>
+<div id="timeline" class="relative max-w-3xl mx-auto space-y-8">
+  <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 to-blue-500"></div>
+  <!-- Aquí se insertarán los ítems dinámicamente con JavaScript -->
 
-      <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
-        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white shadow-md">💬</div>
-        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
-          <h3 class="font-semibold">Idiomas</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Inglés / Nivel - B1</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Español / Nivel - Nativo</p>
-        </div>
-      </div>
+</div>
 
-       <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
-        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white shadow-md">🎖️</div>
-        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
-          <h3 class="font-semibold">Experiencia</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Ingeniería de Software - Universidad XYZ (2019-2024)</p>
-        </div>
-      </div>
-      
-      <!-- Otro item -->
-      <div class="relative flex flex-col md:flex-row items-center md:items-start gap-4">
-        <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white shadow-md">📜</div>
-        <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
-          <h3 class="font-semibold">Certificaciones</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Certificado en Desarrollo Web - Platzi (2023)</p>
-        </div>
-      </div>
-    </div>
   </section>
 </main>
 
@@ -104,7 +71,7 @@
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/42e3c9c5ef.js" crossorigin="anonymous"></script>
-    <script src="./configuracion.js"></script>
+    <script type="module" src="./index.js"></script>
     <script src="./DarkMode.js"></script>
   </body>
 </html>
