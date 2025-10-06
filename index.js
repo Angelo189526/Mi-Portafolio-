@@ -26,6 +26,36 @@ function createElement(tag, className, innerHTML = "") {
   if (innerHTML) el.innerHTML = innerHTML;
   return el;
 }
+
+// -------------------------
+// Imágenes
+// -------------------------
+async function cargarImg() {
+  const cardImg = document.getElementById("card-img");
+  if (!cardImg) return;
+
+  try {
+    const snapshot = await getDocs(collection(db, "imgCard"));
+    snapshot.forEach((doc) => {
+      const { title, url } = doc.data();
+
+      const card = createElement(
+        "div",
+        "bg-white text-zinc-600 rounded-xl p-4 flex flex-col items-center justify-center dark:bg-neutral-900",
+        `
+          <img src="${url}" alt="${title}" loading="lazy"
+               class="w-16 h-16 object-contain mx-auto" />
+          <h4 class="mt-2 text-sm font-semibold dark:text-white">${title}</h4>
+        `
+      );
+
+      cardImg.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error cargando imágenes:", error);
+  }
+}
+
 // -------------------------
 // Habilidades
 // -------------------------
@@ -93,160 +123,9 @@ async function cargarProyectos() {
     console.error("Error cargando proyectos:", error);
   }
 }
-// -------------------------
-// Imágenes
-// -------------------------
-async function cargarImg() {
-  const cardImg = document.getElementById("card-img");
-  if (!cardImg) return;
-
-  try {
-    const snapshot = await getDocs(collection(db, "imgCard"));
-    snapshot.forEach((doc) => {
-      const { title, url } = doc.data();
-
-      const card = createElement(
-        "div",
-        "bg-white text-zinc-600 rounded-xl p-4 flex flex-col items-center justify-center dark:bg-neutral-900",
-        `
-          <img src="${url}" alt="${title}" loading="lazy"
-               class="w-16 h-16 object-contain mx-auto" />
-          <h4 class="mt-2 text-sm font-semibold dark:text-white">${title}</h4>
-        `
-      );
-
-      cardImg.appendChild(card);
-    });
-  } catch (error) {
-    console.error("Error cargando imágenes:", error);
-  }
-}
 
 
-// -------------------------
-// ANUNCIO PRINCIPAL
-// -------------------------
-async function cargarAnuncios() {
-  const container = document.getElementById("anuncios-container");
-  if (!container) return;
 
-  try {
-    const snapshot = await getDocs(collection(db, "AnunciosAnuncioPrincipal"));
-    snapshot.forEach((doc) => {
-      const { url, title, Description, date } = doc.data();
-
-      const anuncio = createElement(
-        "div",
-        // Anuncio principal ocupa la mitad de la grilla horizontal y varias filas
-        "col-span-2 md:col-span-2 row-span-2 bg-white dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
-        `
-        <h4 class="text-xl font-bold mb-2">📣 ${title}</h4> 
-        <img src="${url}" alt="${title}" loading="lazy" 
-     class="mt-4 float-right w-full h-60 object-cover ml-4 mb-4" />
-
-        <p class="mt-12 text-sm text-gray-500">Fecha:${Description}</p>
-        <p class="mt-4 text-indigo-700 dark:text-indigo-400">${date}</p>
-
-        `
-      );
-
-      container.appendChild(anuncio);
-    });
-  } catch (error) {
-    console.error("Error cargando anuncios:", error);
-  }
-}
-
-// -------------------------
-// IDEAS
-// -------------------------
-async function cargarIdeas() {
-  const container = document.getElementById("anuncios-container");
-  if (!container) return;
-
-  try {
-    const snapshot = await getDocs(collection(db, "SeccionIdeas"));
-    snapshot.forEach((doc) => {
-      const { title, Description } = doc.data();
-
-      const idea = createElement(
-        "div",
-        // Ideas ocupan la otra mitad de la grilla
-        "col-span-2 md:col-span-1 row-span-1 bg-white dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
-        `
-        <h4 class="text-lg font-bold mb-1 text-indigo-700 dark:text-indigo-400"> 💡${title}</h4> 
-        <p class="text-sm text-gray-500">${Description}</p>
-        `
-      );
-
-      container.appendChild(idea);
-    });
-  } catch (error) {
-    console.error("Error cargando ideas:", error);
-  }
-}
-
-// -------------------------
-// IDEA SECUNDARIA
-// -------------------------
-async function cargarIdeaSecundaria() {
-  const container = document.getElementById("anuncios-container");
-  if (!container) return;
-
-  try {
-    const snapshot = await getDocs(collection(db, "IdeaSegunda"));
-    snapshot.forEach((doc) => {
-      const { title, Desciption } = doc.data();
-
-      const idea = createElement(
-        "div",
-        "col-span-2 md:col-span-1 row-span-1 bg-white dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full rounded-xl shadow-lg p-6 text-left hover:scale-105 transition-transform",
-        `
-        <h4 class="text-lg font-bold mb-1 text-indigo-700 dark:text-indigo-400">💡${title}</h4> 
-        <p class="text-sm text-gray-500">${Desciption}</p>
-        `
-      );
-
-      container.appendChild(idea);
-    });
-  } catch (error) {
-    console.error("Error cargando idea secundaria:", error);
-  }
-}
-
-// -------------------------
-// PERFIL (Timeline)
-// -------------------------
-async function cargarPerfil() {
-const contenedor = document.getElementById("timeline");
-if (!contenedor) return;
-
-try {
-const snapshot = await getDocs(collection(db, "VerPerfil"));
-snapshot.forEach((doc) => {
-const { icon, title, Description } = doc.data();
-
-  const item = createElement(
-    "div",
-    "relative flex flex-col md:flex-row items-center md:items-start gap-4",
-    `
-      <div class="z-10 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white shadow-md">
-        ${icon}
-      </div>
-      <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-lg p-4 shadow-lg dark:shadow-md w-full md:w-3/4">
-        <h3 class="font-semibold">${title}</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">
-          ${Description || "Sin descripción"}
-        </p>
-      </div>
-    `
-  );
-  contenedor.appendChild(item);   
-});
-} catch (error) {
-console.error("Error cargando perfil:", error);
-}
-}
 
 // -------------------------
 // Inicialización
@@ -255,8 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarImg();
   cargarProyectos();
   cargarHabilidades();
-  cargarAnuncios();
-  cargarIdeas();
-  cargarIdeaSecundaria();
-cargarPerfil();
+
 });
