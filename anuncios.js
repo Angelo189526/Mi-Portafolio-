@@ -116,9 +116,29 @@ async function cargarIdeaSecundaria() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  cargarAnuncios();
-  cargarIdeas();
-  cargarIdeaSecundaria();
+document.addEventListener("DOMContentLoaded", async () => {
+  const loader = document.getElementById("loader");
+  const header = document.getElementById("main-header");
 
+  try {
+    // Espera a que Firebase cargue todos los datos
+    await Promise.all([
+    cargarAnuncios(),
+    cargarIdeas(),
+    cargarIdeaSecundaria(),
+    ]);
+
+    
+    loader.classList.add("opacity-0", "pointer-events-none");
+
+   
+    setTimeout(() => {
+      loader.style.display = "none";
+      header.style.opacity = "1";
+      header.style.pointerEvents = "auto";
+    }, 700); 
+  } catch (error) {
+    console.error("Error inicializando la app:", error);
+    loader.innerHTML = `<p class="text-red-400 mt-4">Error al cargar contenido 😢</p>`;
+  }
 });

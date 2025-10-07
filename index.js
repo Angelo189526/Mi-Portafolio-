@@ -125,14 +125,29 @@ async function cargarProyectos() {
 }
 
 
-
-
 // -------------------------
-// Inicialización
+// Inicialización con Loader
 // -------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  cargarImg();
-  cargarProyectos();
-  cargarHabilidades();
+document.addEventListener("DOMContentLoaded", async () => {
+  const loader = document.getElementById("loader");
+  const header = document.getElementById("main-header");
 
+  try {
+    await Promise.all([
+      cargarImg(),
+      cargarProyectos(),
+      cargarHabilidades()
+    ]);
+
+    loader.classList.add("opacity-0", "pointer-events-none");
+
+    setTimeout(() => {
+      loader.style.display = "none";
+      header.style.opacity = "1";
+      header.style.pointerEvents = "auto";
+    }, 700);
+  } catch (error) {
+    console.error("Error inicializando la app:", error);
+    loader.innerHTML = `<p class="text-red-400 mt-4">Error al cargar contenido 😢</p>`;
+  }
 });
